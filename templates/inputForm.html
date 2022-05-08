@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    
+</head>
+
+<body>
+    <form action="{{ url_for('index') }}" method="POST">
+        <label for="exampleFormControlFile2">Options Contracts for:</label>
+        <select name="name1">
+            {% for data in names %}
+              <option value="{{ data }}" SELECTED>{{ data }}</option>
+            {% endfor %}     
+          </select>
+        <select name="expiryDate">
+            {% for date in expirydts %}
+              <option value="{{ date }}" SELECTED>{{ date }}</option>
+            {% endfor %}     
+          </select>
+        <input type="submit" , value="Get option Chain">
+    </form>
+    
+</body>
+</html>

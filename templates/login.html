@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Login </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">              
+        <style>
+            body, html {
+                height: 98%;
+                -ms-overflow-style: none; /* for Internet Explorer, Edge */
+                scrollbar-width: none; /* for Firefox */
+                overflow-y: scroll; 
+                }
+            
+                body::-webkit-scrollbar {
+                display: none;
+                }
+            
+                .bg {
+                /* The image used */
+                background-image: url("static/img2.jpg");
+                backdrop-filter: blur(6px);
+            
+                /* Full height */
+                height: 100%;
+            
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                }
+
+            #reg {
+                margin-top:100px;
+                
+            }
+            .box {
+                
+                border: 3px solid;
+                background-color: lightgray;
+                padding: 0px;
+                margin-left: 520px;
+                width: 500px;
+                height: 400px;
+              }
+
+              #form3Example3cg {
+                width:300px;
+                height:40px;
+              }
+              #form3Example4cg {
+                width:300px;
+                height:40px;
+              }
+              #log {
+                  width:100px;
+                  height:40px;
+              }
+
+                
+        </style>    
+    
+    </head>
+    <body class='bg'>
+        <section align='center' id="reg" class="box" >
+            
+                      <div class="card-body p-5">
+                        <h1>Login</h1>
+          
+                        <form action="{{ url_for('login') }}" method="post">
+          
+                         
+                          <br></br>
+                          <div class="form-outline mb-4">
+                            <input name='email' placeholder='Email' type="email" id="form3Example3cg" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="form3Example3cg"></label>
+                          </div>
+                          <br></br>
+                          
+
+
+                          <div class="form-outline mb-4">
+                            <input name='password' placeholder='Enter Password' type="password" id="form3Example4cg" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="form3Example4cg"></label>
+                          </div>
+                          <br></br>
+                          
+
+                          
+                        
+                
+          
+                          <div class="d-flex justify-content-center">
+                            <button type="submit" id="log" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                          </div>
+                          <br></br>
+                          <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href='register' class="fw-bold text-body"><u>Register here</u></a></p>
+          
+                        </form>
+          
+                      
+            </div>
+          </section>
+
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/index.css">
+    <title>Option Chain</title>
+</head>
+
+<body>
+
+    <form action="{{ url_for('index') }}" method="POST">
+        <label for="exampleFormControlFile2">Options Contracts for:</label>
+        <select name="name1">
+            {% for data in names %}
+              <option value="{{ data }}" SELECTED>{{ data }}</option>
+            {% endfor %}     
+          </select>
+        <select name="expiryDate">
+            {% for date in expirydts %}
+              <option value="{{ date }}" SELECTED>{{ date }}</option>
+            {% endfor %}     
+          </select>
+        <input type="submit" , value="Get option Chain">
+    </form>
+<!--******************************Button to go to code page*********************************************-->
+<p align="center"><a href=form ><button class=grey style="height:75px;width:150px">Choose Code</button></a></p>
+<!--****************************************************************************************************-->
+
+
+
+
+
+
+    <table class="table">
+        <thead>
+            <tr class="t__top">
+                <th colspan="8">Call</th>
+                <th colspan="9">Put</th>
+            </tr>
+            <tr class="t__header">
+                {% for header in headings %}
+                <th class="t__cell">
+                    {{ header }}
+                </th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for data in gn_df %}
+            <tr>
+                <form action="{{ url_for('cart') }}" method="post">
+                    <input type="hidden" value="{{ data['strikePrice'] }}" name="strikePrice">
+                    <input type="hidden" value="{{ data['ltp_call'] }}" name="ltp1">
+                    <input type="hidden" value="Buy" name="option1">
+                    <input type="hidden" value="Call" name="option2">
+                    <td class="t__data">&emsp;<input type="submit" value="Buy">
+                    </td>
+                </form>
+                <form action="{{ url_for('cart') }}" method="post">
+                    <input type="hidden" value="{{ data['strikePrice'] }}" name="strikePrice">
+                    <input type="hidden" value="{{ data['ltp_call'] }}" name="ltp1">
+                    <input type="hidden" value="Sell" name="option1">
+                    <input type="hidden" value="Call" name="option2">
+                    <td class="t__data">&emsp;<input type="submit" value="Sell">
+                    </td>
+                </form>
+                <td class="t__data">&emsp;{{ data['OI_call'] }}</td>
+                <td class="t__data">&emsp;{{ data['Change_in_OI_call'] }}</td>
+                <td class="t__data">&emsp;{{ data['Volume_call'] }} </td>
+                <td class="t__data">&emsp;{{ data['IV_call'] }} </td>
+                <td class="t__data">&emsp;{{ data['ltp_call'] }} </td>
+                <td class="t__data">&emsp;{{ data['CHNG_call'] }}</td>
+                <td class="t__data">&emsp;<b>{{ data['strikePrice'] }}</b></td>
+                <td class="t__data">&emsp;{{ data['CHNG_put'] }} </td>
+                <td class="t__data">&emsp;{{ data['ltp_put'] }} </td>
+                <td class="t__data">&emsp;{{ data['IV_put'] }} </td>
+                <td class="t__data">&emsp;{{ data['Volume_put'] }} </td>
+                <td class="t__data">&emsp;{{ data['Change_in_OI_put'] }} </td>
+                <td class="t__data">&emsp;{{ data['OI_put'] }}</td>
+                <form action="{{ url_for('cart') }}" method="post">
+                    <input type="hidden" value="{{ data['strikePrice'] }}" name="strikePrice">
+                    <input type="hidden" value="{{ data['ltp_put'] }}" name="ltp1">
+                    <input type="hidden" value="Buy" name="option1">
+                    <input type="hidden" value="Put" name="option2">
+                    <td class="t__data">&emsp;<input type="submit" value="Buy">
+                    </td>
+                </form>
+                <form action="{{ url_for('cart') }}" method="post">
+                    <input type="hidden" value="{{ data['strikePrice'] }}" name="strikePrice">
+                    <input type="hidden" value="{{ data['ltp_put'] }}" name="ltp1">
+                    <input type="hidden" value="Sell" name="option1">
+                    <input type="hidden" value="Put" name="option2">
+                    <td class="t__data">&emsp;<input type="submit" value="Sell"></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+
+    </table>
+</body>
+
+</html>

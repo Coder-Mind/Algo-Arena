@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    body, html {
+    height: 98%;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+    }
+
+    body::-webkit-scrollbar {
+    display: none;
+    }
+
+    .bg {
+    /* The image used */
+    background-image: url("static/welcome.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    #i1 {
+        font-size: 50px;
+        color: rgb(255, 255, 255);
+    }
+    #i2 {
+        margin-top: 70px;
+        font-size: 130px;
+        color: rgb(255, 255, 255);
+        
+    }
+    #but1 {
+      height:40px;
+      width:100px;
+    }
+    #but2 {
+      height:40px;
+      width:100px;
+
+    }
+    #a1 {
+      text-decoration: none;
+    }
+    #a2 {
+      text-decoration: none;
+    }
+    </style>
+</head>
+
+
+<body class="bg">
+
+    <div id="div1">
+        <p id="i1">Welcome to</p>
+        <p id="i2">Algo-Arena</p>
+    </div>
+
+    <div>
+      <button type="submit" id="but1" ><a id='a1' href='/login' >Login</a></button>
+      <button type="submit" id="but2" ><a id='a2' href='/register' >Register</a></button>
+    </div>
+</body>
+</html>

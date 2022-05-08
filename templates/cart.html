@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Your Cart</h1>
+    <form method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>&emsp;Index</th>
+                    <th>&emsp;Strike Price</th>
+                    <th>&emsp;Call/Put</th>
+                    <th>&emsp;Expiry Date</th>
+                    <th>&emsp;LTP</th>
+                    <th>&emsp;Buy/Sell</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_dict %}
+                <tr>
+                    <td>&emsp;&emsp;{{ cart_dict[item][3] }}</td>
+                    <td>&emsp;&emsp;{{ item }}</td>
+                    <td>&emsp;&emsp;{{ cart_dict[item][1] }}</td>
+                    <td>&emsp;&emsp;{{ cart_dict[item][4] }}</td>
+                    <td>&emsp;&emsp;{{ cart_dict[item][0] }}</td>
+                    <td>&emsp;&emsp;{{ cart_dict[item][2] }}</td>
+                    </td>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

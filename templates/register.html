@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Register </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">              
+        <style>
+          body, html {
+            height: 98%;
+            -ms-overflow-style: none; /* for Internet Explorer, Edge */
+            scrollbar-width: none; /* for Firefox */
+            overflow-y: scroll; 
+            }
+        
+            body::-webkit-scrollbar {
+            display: none;
+            }
+        
+            .bg {
+            /* The image used */
+            background-image: url("static/img2.jpg");
+            backdrop-filter: blur(6px);
+        
+            /* Full height */
+            height: 100%;
+        
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+
+
+            #reg {
+                margin-top:100px;
+                
+            }
+            #re {
+              width:100px;
+              height:40px;
+            }
+            .box {
+                
+                border: 3px solid;
+                background-color: lightgray;
+                padding: 0px;
+                margin-left: 520px;
+                width: 500px;
+                height: 600px;
+              }
+
+              #form3Example1cg {
+                width:300px;
+                height:30px;
+              }
+              #form3Example3cg {
+                width:300px;
+                height:30px;
+
+              }
+              #form3Example5cg {
+                width:300px;
+                height:30px;
+
+              }
+              #form3Example6cg {
+                width:300px;
+                height:30px;
+
+              }
+              #form3Example4cg {
+                width:300px;
+                height:30px;
+
+              }
+              #form3Example4cdg {
+                width:300px;
+                height:30px;
+
+              }
+                
+        </style>    
+    
+    </head>
+    <body class='bg'>
+        <section align='center' id="reg" class="box" >
+            
+                      <div class="card-body p-5">
+                        <h1 class="text-uppercase text-center mb-5">Create an account</h1>
+          
+                        <form>
+          
+                          <div class="form-outline mb-4">
+                            <input name='username' placeholder='Full Name' type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example1cg"></label>
+                          </div>
+                          <br></br>
+                          <div class="form-outline mb-4">
+                            <input name='email' placeholder='Email' type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example3cg"></label>
+                          </div>
+                          <br></br>
+
+                          <div class="form-outline mb-4">
+                            <input name='Phone' placeholder='Phone' type="text" id="form3Example5cg" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example5cg" ></label>
+                          </div>
+                          <br></br>
+
+                          <div class="form-outline mb-4">
+                            <input name='aadhar' placeholder='Aadhar' type="text" id="form3Example6cg" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example6cg"></label>
+                          </div>
+                          <br></br>
+                          
+                          <div class="form-outline mb-4">
+                            <input name='password' placeholder='Enter Password' type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example4cg"></label>
+                          </div>
+                          <br></br>
+                          
+                          <div class="form-outline mb-4">
+                            <input name='confirm' placeholder='Confirm Password' type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example4cdg"></label>
+                          </div>
+                          <br></br>
+                          
+                          <div class="form-check d-flex justify-content-center mb-5">
+                            <input
+                              class="form-check-input me-2"
+                              type="checkbox"
+                              value=""
+                              id="form2Example3cg"
+                            />
+                            <label class="form-check-label" for="form2Example3g">
+                              I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                            </label>
+                          </div>
+                          <br></br>
+                          <div class="d-flex justify-content-center">
+                            <button type="button" id='re' class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                          </div>
+          
+                          <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href='login' class="fw-bold text-body"><u>Login here</u></a></p>
+          
+                        </form>
+          
+                      
+            </div>
+          </section>
+
+
+
+
+    </body>
+</html>

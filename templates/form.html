@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <form action="{{ url_for("form")}}" method="post">
+    <label for="codename">Code Name:</label>
+    <input type="text" id="codename" name="cname" placeholder="codename">
+    <label for="codevalue">Code:</label>
+    <input type="text" id="codevalue" name="cvalue" placeholder="codevalue">
+    <button type="submit">Create</button>
+
+
+
+
+    <div align="center">
+			<table>
+				<h1>
+				<!--Displaying the converted table-->
+					{% for table in tables %}
+					<h2>{{titles[loop.index]}}</h2>							
+					{{ table|safe }}
+					{% endfor %}	
+				</h1>
+			</table>
+		</div>
+</body>
+
+</html>
